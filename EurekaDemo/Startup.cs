@@ -1,16 +1,10 @@
 using EurekaDemo.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Steeltoe.Common.Http.Discovery;
-using Steeltoe.Discovery.Client;
-using Steeltoe.Discovery.Eureka;
 
 namespace EurekaDemo
 {
@@ -27,10 +21,7 @@ namespace EurekaDemo
 		public void ConfigureServices(IServiceCollection services)
 		{
 
-			services.AddServiceDiscovery(options => options.UseEureka());
-
 			services.AddHttpClient("dadjokes")
-					.AddServiceDiscovery()
 					.AddTypedClient<DadJokeService>();
 
 			services.AddControllers();

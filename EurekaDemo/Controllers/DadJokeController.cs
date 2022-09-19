@@ -1,9 +1,11 @@
-﻿using EurekaDemo.Services;
+﻿using EurekaDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace EurekaDemo.Controllers
@@ -15,18 +17,22 @@ namespace EurekaDemo.Controllers
 		
 
 		private readonly ILogger<DadJokeController> _logger;
-		private readonly DadJokeService _dadJokeService;
+		private readonly HttpClient _client;
 
-		public DadJokeController(ILogger<DadJokeController> logger, DadJokeService dadJokeService)
+		public DadJokeController(ILogger<DadJokeController> logger, HttpClient client)
 		{
 			_logger = logger;
-			_dadJokeService = dadJokeService;
+			_client = client;
 		}
 
 		[HttpGet]
 		public async Task<string> Get()
 		{
-			return await _dadJokeService.GetJokeAsync();
+			_client.DefaultRequestHeaders.Add("Accept", "application/json");
+
+			var joke = await _client.GetFromJsonAsync<DadJokeResponse>("https://icanhazdadjoke.com/");
+
+			return joke.Joke;
 		}
 	}
 }

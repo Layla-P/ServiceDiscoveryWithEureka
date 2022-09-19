@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurekaDemoClient", "EurekaDemoClient\EurekaDemoClient.csproj", "{FEAD6F0E-188C-4655-8DB7-25AA23D6CC6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEAD6F0E-188C-4655-8DB7-25AA23D6CC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAD6F0E-188C-4655-8DB7-25AA23D6CC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAD6F0E-188C-4655-8DB7-25AA23D6CC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAD6F0E-188C-4655-8DB7-25AA23D6CC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {018E574F-52B5-4EA5-853B-45B3D7AA62DB}
+	EndGlobalSection
+EndGlobal

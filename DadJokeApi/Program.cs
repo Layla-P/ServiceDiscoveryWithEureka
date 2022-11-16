@@ -1,9 +1,4 @@
-using EurekaDemoApi;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Steeltoe.Common.Hosting;
+using EurekaDemo.Services;
 using Steeltoe.Discovery.Client;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,9 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHostedService<ConsoleFetchService>();
+
+
 builder.Services.AddDiscoveryClient();
-builder.Services.AddHttpClient();
+builder.Services.AddSingleton<DadJokeService>();
 
 var app = builder.Build();
 
